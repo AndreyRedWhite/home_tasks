@@ -23,7 +23,7 @@ async def send_welcome(message: types.Message):
 @dp.message(F.text)
 async def convert(message: types.Message):
     try:
-        amount = float(message.text)
+        amount = float(message.text) * 1000
         result = amount / 162
         await message.answer(f'{amount} IDR равно {result:.2f} RUB')
     except ValueError:
